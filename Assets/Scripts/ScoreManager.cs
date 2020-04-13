@@ -21,14 +21,14 @@ public class ScoreManager : MonoBehaviour
 
 	void Update()
 	{
-		// Check if the level has ended
+		// check if the level has ended
 		checkEndLevel();
 	}
 
 	public void AddToScore()
 	{
 		this.score++;
-		// Display the new score on the screen
+		// display the new score on the screen
 		scoreLabel.text = "Score: " + score;
 		checkEndLevel();
 	}
@@ -38,9 +38,9 @@ public class ScoreManager : MonoBehaviour
 		if(checkAllTargetsDestroyed())
 		{
 			if(SceneManager.GetActiveScene().name == "LevelOne"){
-				StartCoroutine(GoToLevel2(2));
+				StartCoroutine(GoToScene(2, "Let's go to level 2!", "levelTwo"));
 			}else{
-				StartCoroutine(GoToMenu(2));
+				StartCoroutine(GoToScene(2, "Thanks for playing!", "Menu"));
 			}
 			 
 		}
@@ -49,8 +49,8 @@ public class ScoreManager : MonoBehaviour
 	// Function to check if all the targets are destroyed
 	private bool checkAllTargetsDestroyed()
 	{
-		GameObject[] arr;
-		arr = GameObject.FindGameObjectsWithTag("Target");
+		// find all objects with the Target tag
+		GameObject[] arr = GameObject.FindGameObjectsWithTag("Target");
         if (arr.Length == 0) 
 		{
         	return true;
@@ -59,26 +59,14 @@ public class ScoreManager : MonoBehaviour
 	}
 
 	// Function to make the transistion to level 2
- 	IEnumerator GoToMenu(int wait)
+ 	IEnumerator GoToScene(int wait, string displayText, string sceneName)
     {
 		infoLabel.color = new Color(255,255,255);
-        infoLabel.text = "Thanks for playing!";
+        infoLabel.text = displayText;
 
-        //yield on a new YieldInstruction that waits for 5 seconds.
+		// wait for given seconds
         yield return new WaitForSeconds(wait);
 
-		SceneManager.LoadScene("Menu");
-    }
-
-	// Function to make the transistion to level 2
- 	IEnumerator GoToLevel2(int wait)
-    {
-		infoLabel.color = new Color(255,255,255);
-        infoLabel.text = "Let's go to level 2!";
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(wait);
-
-		SceneManager.LoadScene("LevelTwo");
+		SceneManager.LoadScene(sceneName);
     }
 }

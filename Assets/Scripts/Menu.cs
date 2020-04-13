@@ -30,7 +30,7 @@ public class Menu : MonoBehaviour
          #endif
     }
 
-	// Function to load a level
+	// Function to load a level with the given string name
 	private void LoadLevel(string levelName){
 		SceneManager.LoadScene(levelName);
 	}

@@ -10,6 +10,7 @@ public class BulletHit : MonoBehaviour
 		score = player.GetComponent<ScoreManager>();
 	}
 
+	// this function is called when the bullet hits another object
 	void OnTriggerEnter(Collider collidedObject)
 	{
 		// check if the bullet collided with a target

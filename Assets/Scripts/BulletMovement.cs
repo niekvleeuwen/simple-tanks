@@ -3,10 +3,11 @@ using System.Collections;
 
 public class BulletMovement : MonoBehaviour
 {
-	public float speed = 30;
+	private float speed = 30;
 
 	void Start()
 	{
+		// destroy the bullet after 5 seconds
 		Invoke ("DestroyBullet", 5);
 	}
 

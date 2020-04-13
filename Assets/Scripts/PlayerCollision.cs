@@ -11,7 +11,7 @@ public class PlayerCollision : MonoBehaviour
 
     void Start () 
 	{
-		// save the game over text object in the infoLabel field
+		// save the text object in the infoLabel field
 		GameObject textObj = GameObject.FindGameObjectWithTag("InfoText");
 		this.infoLabel = textObj.GetComponent<Text>();
 	}
@@ -19,7 +19,8 @@ public class PlayerCollision : MonoBehaviour
     {   
         if(collision.collider.name == "Target")
         {
-            infoLabel.color = new Color(255,0,0);
+            // set the color to red
+            infoLabel.color = new Color(255,0,0); 
             infoLabel.text = "GAME OVER";
             // disable player movement
             playerMovement.enabled = false;
@@ -31,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
     // Function to make the transistion to level 2
  	IEnumerator GoToMenu(int wait)
     {
-        //yield on a new YieldInstruction that waits for 5 seconds.
+        // wait for given seconds
         yield return new WaitForSeconds(wait);
 
 		SceneManager.LoadScene("Menu");
