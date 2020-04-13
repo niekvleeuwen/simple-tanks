@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 public class ScoreManager : MonoBehaviour
 {
 	private Text scoreLabel;
+	private Text infoLabel;
 	private int score = 0;
 
 	void Start () 
 	{
 		// save the score text object in the scoreLabel field
-		GameObject textObj = GameObject.FindGameObjectWithTag("ScoreText");
-		this.scoreLabel = textObj.GetComponent<Text>();
+		GameObject textObj1 = GameObject.FindGameObjectWithTag("ScoreText");
+		this.scoreLabel = textObj1.GetComponent<Text>();
+		// save the game over text object in the gameOverLabel field
+		GameObject textObj2 = GameObject.FindGameObjectWithTag("InfoText");
+		this.infoLabel = textObj2.GetComponent<Text>();
 	}
 
 	void Update()
@@ -34,9 +38,9 @@ public class ScoreManager : MonoBehaviour
 		if(checkAllTargetsDestroyed())
 		{
 			if(SceneManager.GetActiveScene().name == "LevelOne"){
-				StartCoroutine(GoToLevel2());
+				StartCoroutine(GoToLevel2(2));
 			}else{
-				StartCoroutine(GoToMenu());
+				StartCoroutine(GoToMenu(2));
 			}
 			 
 		}
@@ -55,23 +59,25 @@ public class ScoreManager : MonoBehaviour
 	}
 
 	// Function to make the transistion to level 2
- 	IEnumerator GoToMenu()
+ 	IEnumerator GoToMenu(int wait)
     {
-        scoreLabel.text = "Thanks for playing!";
+		infoLabel.color = new Color(255,255,255);
+        infoLabel.text = "Thanks for playing!";
 
         //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(wait);
 
 		SceneManager.LoadScene("Menu");
     }
 
 	// Function to make the transistion to level 2
- 	IEnumerator GoToLevel2()
+ 	IEnumerator GoToLevel2(int wait)
     {
-        scoreLabel.text = "Let's go to level 2!";
+		infoLabel.color = new Color(255,255,255);
+        infoLabel.text = "Let's go to level 2!";
 
         //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(wait);
 
 		SceneManager.LoadScene("LevelTwo");
     }
