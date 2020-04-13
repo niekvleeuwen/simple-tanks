@@ -7,7 +7,7 @@ public class TankShoot : MonoBehaviour
 
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.Space))
+		 if (Input.GetMouseButtonDown(0))
 		{
 			// create a bullet
 			Instantiate(bullet, spawnPosObj.transform.position, this.transform.rotation);
