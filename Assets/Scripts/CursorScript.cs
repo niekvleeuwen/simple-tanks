@@ -10,7 +10,11 @@ public class CursorScript : MonoBehaviour
         // center cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.None;   
-        // set Cursor to not be visible
-        Cursor.visible = false;
+        // set Cursor to not be visible if not in menu
+        if(SceneManager.GetActiveScene().name == "Menu"){
+            Cursor.visible = true;
+        }else{
+            Cursor.visible = false;
+        }
     }
 }
