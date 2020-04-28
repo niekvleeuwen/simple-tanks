@@ -1,16 +1,17 @@
 # simple-tank
-Simpel tank spel in Unity
-## Hoe te spelen
-* W,A,S,D om te bewegen
-* Linker muis knop om te schieten
-* Verschuif de muis naar links en rechts om de turret te bewegen
+Simple tank game in Unity
 
-## Onderdelen
-* applicatie met minimaal 3 verschillende scenes
-* animatie door code bestuurd
-* condities in code voor het wisselen van de scene
-* scenes op een vloeiende wijze aan elkaar gekoppeld d.m.v. code
-* 2D UI overlay over de 3D-scene
-* UI die reageert op events in de 3D-scene, bijv. score bijhouden
-* mini-menu, met minimaal 3 opties
-* gebruikersinteractie: minimaal 2 bronnen (toetsenbord, muis, joystick, 3D-bril, ...) d.m.v. code uitgelezen
+## How to play
+* W,A,S,D to move
+* Left mouse button to shoot
+* Move the mouse to move the turret
+
+## Features
+* application with at least 3 different scenes
+* animation controlled by code
+* conditions in code for changing the scene
+* Scenes smoothly linked together by code
+* 2D UI overlay over the 3D scene
+* UI that responds to events in the 3D scene, e.g. keeping score
+* mini menu, with at least 3 options
+* user interaction: at least 2 sources (keyboard, mouse, joystick, 3D glasses, ...) by means of code read out
