@@ -1,7 +1,7 @@
 # simple-tank
 Simple tank game in Unity
 
-![Demo](https://i.imgur.com/bC2oMWt.gif)
+![Demo](https://github.com/niekvleeuwen/simple-tanks/blob/master/Demo/demo.gif?raw=true)
 
 ## How to play
 * W,A,S,D to move
