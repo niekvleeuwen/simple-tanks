@@ -1,6 +1,8 @@
 # simple-tank
 Simple tank game in Unity
 
+[Demo](https://i.imgur.com/bC2oMWt.gifv)
+
 ## How to play
 * W,A,S,D to move
 * Left mouse button to shoot
